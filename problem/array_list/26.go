@@ -34,6 +34,7 @@ for (int i = 0; i < len; i++) {
 
 
 // 快慢指针
+// test func 
 func removeDuplicates(nums []int) int {
 	n := len(nums)
 	if n == 0 {
