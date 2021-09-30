@@ -16,7 +16,7 @@ package binary_tree
  * }
  */
 
-func pathSum(root *TreeNode, targetSum int) int {
+func pathSum2(root *TreeNode, targetSum int) int {
 	preSum := map[int]int{0: 1} // 记录当前有的前缀和
 	var dfs func(*TreeNode, int)
 	var ans int

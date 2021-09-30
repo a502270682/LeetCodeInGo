@@ -1,4 +1,6 @@
-package problem
+package mianshi
+
+import "LeetCodeInGo/problem"
 
 /*
 一个有名的按摩师会收到源源不断的预约请求，每个预约都可以选择接或不接。在每次预约服务之间要有休息时间，因此她不能接受相邻的预约。给定一个预约请求序列，替按摩师找到最优的预约集合（总预约时间最长），返回总的分钟数。
@@ -33,13 +35,13 @@ func massage(nums []int) int {
 		return nums[0]
 	}
 	if len(nums) == 2 {
-		return max(nums[0], nums[1])
+		return problem.max(nums[0], nums[1])
 	}
 	dp := make([]int, len(nums))
 	dp[0] = nums[0]
-	dp[1] = max(nums[0], nums[1])
+	dp[1] = problem.max(nums[0], nums[1])
 	for i := 2; i < len(nums); i++ {
-		dp[i] = max(dp[i-1], dp[i-2]+nums[i])
+		dp[i] = problem.max(dp[i-1], dp[i-2]+nums[i])
 	}
 	return dp[len(nums)-1]
 }
