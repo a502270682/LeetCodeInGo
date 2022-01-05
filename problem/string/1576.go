@@ -28,9 +28,12 @@ func modifyString(s string) string {
 		this := s[idx]
 		replace := this
 		if replace == 63 {
+			if length == 1 {
+				return "a"
+			}
 			for i := 97; i <= 99; i ++ {
 				if idx > 0 && idx < length - 1 {
-					if ret[idx-1] != uint8(i) && ret[idx+1] != uint8(i) {
+					if ret[idx-1] != uint8(i) && s[idx+1] != uint8(i) {
 						replace = uint8(i)
 					}
 				} else if idx > 0 {
@@ -38,7 +41,7 @@ func modifyString(s string) string {
 						replace = uint8(i)
 					}
 				} else if idx < length - 1 {
-					if ret[idx+1] != uint8(i) {
+					if s[idx+1] != uint8(i) {
 						replace = uint8(i)
 					}
 				}
