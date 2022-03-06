@@ -5,7 +5,7 @@ package pre_sum
 
 请返回 nums 的动态和。
 
- 
+
 
 示例 1：
 

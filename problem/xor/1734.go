@@ -1,12 +1,12 @@
 package xor
 
 /*
-给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。
+给你一个整数数组perm，它是前n个正整数的排列，且n是个 奇数。
 
-它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。
-比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。
+它被加密成另一个长度为 n - 1的整数数组encoded，满足encoded[i] = perm[i] XOR perm[i + 1]。
+比方说，如果perm = [1,3,2]，那么encoded = [2,1]。
 
-给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。
+给你encoded数组，请你返回原始数组perm。题目保证答案存在且唯一。
 
 
 
