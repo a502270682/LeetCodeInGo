@@ -1,11 +1,11 @@
 package xor
 
 /*
-有一个正整数数组 arr，现给你一个对应的查询数组 queries，其中 queries[i] = [Li, Ri]。
+有一个正整数数组arr，现给你一个对应的查询数组queries，其中queries[i] = [Li,Ri]。
 
-对于每个查询 i，请你计算从 Li 到 Ri 的 XOR 值（即 arr[Li] xor arr[Li+1] xor ... xor arr[Ri]）作为本次查询的结果。
+对于每个查询i，请你计算从Li到Ri的XOR值（即arr[Li] xor arr[Li+1] xor ... xor arr[Ri]）作为本次查询的结果。
 
-并返回一个包含给定查询 queries 所有结果的数组。
+并返回一个包含给定查询queries所有结果的数组。
 
 
 
@@ -44,7 +44,7 @@ func xorQueries(arr []int, queries [][]int) []int {
 当 left=0 时，Q(left,right)=xors[right+1]
 
 当 left>0 时，Q(left,right) 的计算如下：
- Q(left,right)
+Q(left,right)
 =arr[left]⊕…⊕arr[right]
 =(arr[0]⊕…⊕arr[left−1])⊕(arr[0]⊕…⊕arr[left−1])⊕(arr[left]⊕…⊕arr[right])
 =(arr[0]⊕…⊕arr[left−1])⊕(arr[0]⊕…⊕arr[right])

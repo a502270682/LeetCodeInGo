@@ -6,7 +6,7 @@ package binary_tree
 
 
 例如:
-给定二叉树: [3,9,20,null,null,15,7],
+给定二叉树:[3,9,20,null,null,15,7],
 
     3
    / \
