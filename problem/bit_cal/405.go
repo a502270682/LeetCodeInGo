@@ -1,4 +1,4 @@
-package bit
+package bit_cal
 
 import "strings"
 
@@ -18,7 +18,7 @@ import "strings"
 
 输出:
 "1a"
- */
+*/
 
 func toHex(num int) string {
 	if num == 0 {
@@ -39,4 +39,3 @@ func toHex(num int) string {
 	}
 	return sb.String()
 }
-
