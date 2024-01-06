@@ -7,14 +7,14 @@ package linked_list
 
 */
 
-type Node struct {
+type NodeN struct {
 	Val   int
-	Prev  *Node
-	Next  *Node
-	Child *Node
+	Prev  *NodeN
+	Next  *NodeN
+	Child *NodeN
 }
 
-func dfs(node *Node) (last *Node) {
+func dfs(node *NodeN) (last *NodeN) {
 	cur := node
 	for cur != nil {
 		next := cur.Next
@@ -44,7 +44,7 @@ func dfs(node *Node) (last *Node) {
 	return
 }
 
-func flatten(root *Node) *Node {
+func flatten(root *NodeN) *NodeN {
 	dfs(root)
 	return root
 }
