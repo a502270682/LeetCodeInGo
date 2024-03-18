@@ -30,22 +30,24 @@ type NumArray struct {
 }
 
 func Constructor(nums []int) NumArray {
-	sums := make([]int, len(nums))
+	preSum := make([]int, 0)
 	for i, v := range nums {
 		if i == 0 {
-			sums[0] = v
+			preSum = append(preSum, v)
 		} else {
-			sums[i] += sums[i-1] + v
+			preSum = append(preSum, preSum[i-1]+v)
 		}
 	}
-	return NumArray{sums: sums}
+	return NumArray{
+		sums: preSum,
+	}
 }
 
 func (this *NumArray) SumRange(i int, j int) int {
-	if i > 0 {
-		return this.sums[j] - this.sums[i-1]
-	} else {
+	if i == 0 {
 		return this.sums[j]
+	} else {
+		return this.sums[j] - this.sums[i-1]
 	}
 }
 

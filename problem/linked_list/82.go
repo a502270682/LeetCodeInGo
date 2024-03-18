@@ -7,33 +7,6 @@ package linked_list
  *     Next *ListNode
  * }
  */
-//func deleteDuplicates(head *ListNode) *ListNode {
-//	if head == nil || head.Next == nil {
-//		return head
-//	}
-//	cur := head
-//	numM := make(map[int]int)
-//	for cur.Next != nil {
-//		if count, ok := numM[cur.Val]; ok {
-//			numM[cur.Val] = count + 1
-//		} else {
-//			numM[cur.Val] = 1
-//		}
-//		cur = cur.Next
-//	}
-//	cur = head.Next
-//	last := cur
-//	for cur != nil {
-//		if count, _ := numM[cur.Val]; count > 1 {
-//			tmp := cur.Next
-//			last.Next = tmp
-//		} else {
-//
-//		}
-//		cur = cur.Next
-//
-//	}
-//}
 
 func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
