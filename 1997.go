@@ -1,38 +1,38 @@
 package main
 
-func firstDayBeenInAllRooms(nextVisit []int) int {
-	n := len(nextVisit)
-	visitCount := make([]int, n)
-	allVisit := func() bool {
-		for _, v := range visitCount {
-			if v == 0 {
-				return false
-			}
-		}
-		return true
-	}
-	visitCount[0] = 1
-	lastVisit := 0
-	allV := false
-	nextV := 0
-	days := 0
-	mod := 1000000000 + 7
-	for !allV {
-		if count := visitCount[lastVisit]; count%2 != 0 {
-			nextV = nextVisit[lastVisit]
-		} else {
-			nextV = (lastVisit + 1) % n
-		}
-		visitCount[nextV] = visitCount[nextV] + 1
-		lastVisit = nextV
-		allV = allVisit()
-		days++
-		if days >= mod {
-			days = days % mod
-		}
-	}
-	return days
-}
+//func firstDayBeenInAllRooms(nextVisit []int) int {
+//	n := len(nextVisit)
+//	visitCount := make([]int, n)
+//	allVisit := func() bool {
+//		for _, v := range visitCount {
+//			if v == 0 {
+//				return false
+//			}
+//		}
+//		return true
+//	}
+//	visitCount[0] = 1
+//	lastVisit := 0
+//	allV := false
+//	nextV := 0
+//	days := 0
+//	mod := 1000000000 + 7
+//	for !allV {
+//		if count := visitCount[lastVisit]; count%2 != 0 {
+//			nextV = nextVisit[lastVisit]
+//		} else {
+//			nextV = (lastVisit + 1) % n
+//		}
+//		visitCount[nextV] = visitCount[nextV] + 1
+//		lastVisit = nextV
+//		allV = allVisit()
+//		days++
+//		if days >= mod {
+//			days = days % mod
+//		}
+//	}
+//	return days
+//}
 
 func firstDayBeenInAllRooms(nextVisit []int) int {
 	mod := 1000000007
