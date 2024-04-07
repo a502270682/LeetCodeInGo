@@ -19,16 +19,14 @@ s = "loveleetcode"
 */
 
 func firstUniqChar(s string) int {
-	letter := make([]int32, 26)
-	first := -1
-	for _, this := range s {
-		letter[this-'a']++
+	sMap := make([]rune, 26)
+	for _, i := range s {
+		sMap[i-'a']++
 	}
-	for idx, this := range s {
-		if letter[this-'a'] == 1 {
-			first = idx
-			break
+	for idx, i := range s {
+		if count := sMap[i-'a']; count == 1 {
+			return idx
 		}
 	}
-	return first
+	return -1
 }
