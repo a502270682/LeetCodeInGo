@@ -1,18 +1,19 @@
 package sort
 
-func QuickSort(tar []int, low, high int) {
-	if low >= high {
-		return
+func QuickSort(tar []int, left, right int) []int {
+	if left >= right {
+		return tar
 	}
-	pivotIndex := Partition(tar, low, high)
-	QuickSort(tar, low, pivotIndex-1)
-	QuickSort(tar, pivotIndex+1, high)
+	pivotIndex := Partition(tar, left, right)
+	QuickSort(tar, left, pivotIndex-1)
+	QuickSort(tar, pivotIndex+1, right)
+	return tar
 }
 
 // 双边循环
-func Partition(tar []int, low, high int) int {
-	left, right := low, high
+func Partition(tar []int, left, right int) int {
 	pivot := tar[left]
+	l := left
 	// 终止条件是左右指向同一个值
 	for left != right {
 		// 一定先找右边的
@@ -30,6 +31,6 @@ func Partition(tar []int, low, high int) int {
 		}
 	}
 	// 把哨兵放到最终满足左边都小于他，右边都大于他的点
-	tar[low], tar[left] = tar[left], tar[low]
+	tar[l], tar[left] = tar[left], tar[l]
 	return left
 }
