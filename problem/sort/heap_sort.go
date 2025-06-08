@@ -19,7 +19,7 @@ func heapify(nums []int, i, arrLen int) {
 	}
 }
 
-func buildMaxHeap(nums []int, arrLen int) {
+func BuildMaxHeap(nums []int, arrLen int) {
 	for i := arrLen / 2; i >= 0; i-- {
 		heapify(nums, i, arrLen)
 	}
@@ -27,7 +27,7 @@ func buildMaxHeap(nums []int, arrLen int) {
 
 func heapSort(nums []int) []int {
 	arrLen := len(nums)
-	buildMaxHeap(nums, arrLen)
+	BuildMaxHeap(nums, arrLen)
 	for i := arrLen - 1; i >= 0; i-- {
 		swap(nums, 0, i)
 		arrLen -= 1

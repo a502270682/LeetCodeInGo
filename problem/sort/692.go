@@ -2,7 +2,6 @@ package sort
 
 import (
 	"container/heap"
-	"sort"
 )
 
 /*
@@ -25,23 +24,23 @@ import (
 解析: "the", "is", "sunny" 和 "day" 是出现次数最多的四个单词，
     出现次数依次为 4, 3, 2 和 1 次。
 
- */
-
-func topKFrequent(words []string, k int) []string {
-	cnt := map[string]int{}
-	for _, w := range words {
-		cnt[w]++
-	}
-	uniqueWords := make([]string, 0, len(cnt))
-	for w := range cnt {
-		uniqueWords = append(uniqueWords, w)
-	}
-	sort.Slice(uniqueWords, func(i, j int) bool {
-		s, t := uniqueWords[i], uniqueWords[j]
-		return cnt[s] > cnt[t] || cnt[s] == cnt[t] && s < t
-	})
-	return uniqueWords[:k]
-}
+*/
+//
+//func topKFrequent(words []string, k int) []string {
+//	cnt := map[string]int{}
+//	for _, w := range words {
+//		cnt[w]++
+//	}
+//	uniqueWords := make([]string, 0, len(cnt))
+//	for w := range cnt {
+//		uniqueWords = append(uniqueWords, w)
+//	}
+//	sort.Slice(uniqueWords, func(i, j int) bool {
+//		s, t := uniqueWords[i], uniqueWords[j]
+//		return cnt[s] > cnt[t] || cnt[s] == cnt[t] && s < t
+//	})
+//	return uniqueWords[:k]
+//}
 
 // 优先队列
 
@@ -52,7 +51,9 @@ type pair struct {
 
 // 继承自heap的队列
 type hp []pair
-func (h hp) Len() int            { return len(h) }
+
+func (h hp) Len() int { return len(h) }
+
 // Less 替换规则主要实现less
 func (h hp) Less(i, j int) bool  { a, b := h[i], h[j]; return a.c < b.c || a.c == b.c && a.w > b.w }
 func (h hp) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
@@ -77,4 +78,3 @@ func topKFrequent(words []string, k int) []string {
 	}
 	return ans
 }
-
