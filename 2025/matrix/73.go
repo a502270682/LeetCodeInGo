@@ -1,4 +1,4 @@
-package mitrix
+package matrix
 
 func setZeroes(matrix [][]int) {
 	rows := make([]bool, len(matrix))
