@@ -9,7 +9,18 @@ package binary_tree
  * }
  */
 func flatten(root *TreeNode) {
-	list := preOrderTravel(root)
+	var helper func(root *TreeNode)
+	var list []*TreeNode
+	helper = func(root *TreeNode) {
+		if root == nil {
+			return
+		}
+		list = append(list, root)
+		helper(root.Left)
+		helper(root.Right)
+	}
+	helper(root)
+	//list := preOrderTravel(root)
 	for i := 1; i < len(list); i++ {
 		prev, curr := list[i-1], list[i]
 		prev.Left = nil
